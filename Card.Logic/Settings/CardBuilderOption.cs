@@ -27,6 +27,7 @@ namespace Card.Logic.Settings
                 option.RuleForValue = returnValue;
             }
         }
+        
         public void AddRuleForCalculatingValue(DeckCardSize cardSize, Func<int> returnValue)
         {
             var cardSymbols = Enum.GetValues<DeckCardSymbol>()?.ToList();
@@ -37,7 +38,6 @@ namespace Card.Logic.Settings
                 AddRuleForCalculatingValue(cardSize, cardSymbol, returnValue);
             }
         }
-
 
         public CardOption GetOrCreateOption(DeckCardSize cardSize, DeckCardSymbol cardSymbol)
         {

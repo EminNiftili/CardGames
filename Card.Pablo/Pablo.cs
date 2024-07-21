@@ -87,13 +87,13 @@ namespace Card.Pablo
             }
         }
 
-        public TakenCard Play(int userId, bool fromPlayed)
+        public TakenCard Play(int userId, bool isFromPlayed)
         {
             if (_userQueue.Any(x => x.Value.Id == userId))
             {
                 var userQueue = _userQueue.First(x => x.Value.Id == userId);
                 TakenCard takenCard = new TakenCard();
-                if (fromPlayed)
+                if (isFromPlayed)
                 {
                     takenCard.Card = _playedCards.GetLastAndRemove();
                     takenCard.Actions = new List<PabloAction>
